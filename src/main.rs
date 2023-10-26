@@ -1,9 +1,9 @@
 mod light;
 
-use light::Light;
+use light::Color;
 
 fn main() {
-    println!("Yellow 1: {:?}", Light::Yellow(1));
-    println!("Blue 2: {:?}", Light::Blue(2));
-    println!("Red 3: {:?}", Light::Red(3));
+    println!("Yellow 1: {:?}", Color::Yellow);
+    println!("Blue 2: {:?}", Color::Blue);
+    println!("Red 3: {:?}", Color::Red);
 }
