@@ -28,20 +28,29 @@ impl ColorSettings {
     }
 }
 
+trait TrafficLight {
+    fn next() -> Color;
+}
+
 #[derive(Clone, Debug)]
-pub struct TrafficLight<'a> {
+pub struct StandardTrafficLight<'a> {
     color_settings: &'a ColorSettings,
     color: Color,
     time: u32
 }
 
-impl TrafficLight<'_> {
-    pub fn new(initial_color: Color, color_settings: &ColorSettings) -> TrafficLight {
+impl StandardTrafficLight<'_> {
+    pub fn new(initial_color: Color, color_settings: &ColorSettings) -> StandardTrafficLight {
         let time = color_settings.get_time(&initial_color);
-        TrafficLight {
+        StandardTrafficLight {
             color_settings: color_settings,
             color: initial_color,
             time: time,
         }
+    }
+
+    fn next() -> Color {
+        //stub
+        Color::Red
     }
 }
